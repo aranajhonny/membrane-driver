@@ -1,5 +1,5 @@
 {
-  "name": "membrane",
+  "name": "meta",
   "version": "1",
   "dependencies": {
     "cross-fetch": "^2.1.1",
