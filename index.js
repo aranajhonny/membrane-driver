@@ -1,14 +1,33 @@
-const { root } = program.refs
+import { client } from './client';
+const { root } = program.refs;
 
 export async function init() {
-  // Called when the program is run
+  await root.set({
+    programs: {},
+    programInstances: {},
+  });
 }
 
-export async function update() {
-  // Called when the program is updated from a previous version
-}
+export const ProgramCollection = {
+  async one({ args }) {
+  },
+  async items() {
+     const result = await client.query(gql`
+    query {
+      allPrograms {
+        id
+        name
+        latestVersion { id, hash, dependencies { name description type }, environment { name description type }}
+      }
+    }
+  `);
 
-export async function timer({ key }) {
-  // Called every time a timer fires
-}
+  console.log(result.allPrograms)
+  return result.allPrograms
+  },
+};
 
+export const Program = {
+  async self() {
+  },
+};

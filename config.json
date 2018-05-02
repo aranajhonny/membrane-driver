@@ -1,0 +1,679 @@
+{
+ "imports": [],
+ "dependencies": [],
+ "environment": [],
+ "endpoints": [],
+ "schema": {
+  "types": [
+   {
+    "name": "Root",
+    "fields": [
+     {
+      "name": "programs",
+      "type": "ProgramCollection"
+     },
+     {
+      "name": "programInstances",
+      "type": "ProgramInstance"
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "Program",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "Program"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Program",
+    "fields": [
+     {
+      "name": "id",
+      "type": "String"
+     },
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "latestVersion",
+      "type": "ProgramVersion"
+     },
+     {
+      "name": "runningInstances",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstance"
+      }
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "Program"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersion",
+    "fields": [
+     {
+      "name": "id",
+      "type": "String"
+     },
+     {
+      "name": "hash",
+      "type": "String"
+     },
+     {
+      "name": "programId",
+      "type": "String"
+     },
+     {
+      "name": "program",
+      "type": "Program"
+     },
+     {
+      "name": "schema",
+      "type": "Schema"
+     },
+     {
+      "name": "dependencies",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramVersionDependency"
+      }
+     },
+     {
+      "name": "environment",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramVersionEnvironmentVariable"
+      }
+     },
+     {
+      "name": "expressions",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramVersionExpression"
+      }
+     },
+     {
+      "name": "files",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramVersionFile"
+      }
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Schema",
+    "fields": [
+     {
+      "name": "types",
+      "type": "List",
+      "ofType": {
+       "type": "Type"
+      }
+     },
+     {
+      "name": "imports",
+      "type": "List",
+      "ofType": {
+       "type": "SchemaImport"
+      }
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Type",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     },
+     {
+      "name": "fields",
+      "type": "List",
+      "ofType": {
+       "type": "Field"
+      }
+     },
+     {
+      "name": "computedFields",
+      "type": "List",
+      "ofType": {
+       "type": "ComputedField"
+      }
+     },
+     {
+      "name": "actions",
+      "type": "List",
+      "ofType": {
+       "type": "Action"
+      }
+     },
+     {
+      "name": "events",
+      "type": "List",
+      "ofType": {
+       "type": "Event"
+      }
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "Type"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Field",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     },
+     {
+      "name": "params",
+      "type": "List",
+      "ofType": {
+       "type": "Param"
+      }
+     },
+     {
+      "name": "type",
+      "type": "String"
+     },
+     {
+      "name": "ofType",
+      "type": "OfType"
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Param",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "type",
+      "type": "String"
+     },
+     {
+      "name": "ofType",
+      "type": "OfType"
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "Param"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Field",
+    "fields": [
+     {
+      "name": "type",
+      "type": "String"
+     },
+     {
+      "name": "ofType",
+      "type": "OfType"
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "OfType",
+    "fields": [
+     {
+      "name": "type",
+      "type": "String"
+     },
+     {
+      "name": "ofType",
+      "type": "OfType"
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ComputedField",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     },
+     {
+      "name": "params",
+      "type": "List",
+      "ofType": {
+       "type": "Param"
+      }
+     },
+     {
+      "name": "type",
+      "type": "String"
+     },
+     {
+      "name": "ofType",
+      "type": "OfType"
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Action",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     },
+     {
+      "name": "params",
+      "type": "List",
+      "ofType": {
+       "type": "Param"
+      }
+     },
+     {
+      "name": "type",
+      "type": "String"
+     },
+     {
+      "name": "ofType",
+      "type": "OfType"
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Event",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     },
+     {
+      "name": "params",
+      "type": "List",
+      "ofType": {
+       "type": "Param"
+      }
+     },
+     {
+      "name": "type",
+      "type": "String"
+     },
+     {
+      "name": "ofType",
+      "type": "OfType"
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "SchemaImport",
+    "fields": [
+     {
+      "name": "id",
+      "type": "String"
+     },
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "type",
+      "type": "List",
+      "ofType": {
+       "type": "Type"
+      }
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "SchemaImport"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersionDependency",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     },
+     {
+      "name": "type",
+      "type": "String"
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "ProgramVersionDependency"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersionEnvironmentVariable",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     },
+     {
+      "name": "type",
+      "type": "String"
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "ProgramVersionEnvironmentVariable"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersionExpression",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     },
+     {
+      "name": "pattern",
+      "type": "String"
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "ProgramVersionExpression"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersionFile",
+    "fields": [
+     {
+      "name": "path",
+      "type": "String"
+     },
+     {
+      "name": "content",
+      "type": "String"
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "ProgramVersionFile"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramInstance",
+    "fields": [
+     {
+      "name": "id",
+      "type": "String"
+     },
+     {
+      "name": "alias",
+      "type": "String"
+     },
+     {
+      "name": "programVersion",
+      "type": "ProgramVersion"
+     },
+     {
+      "name": "status",
+      "type": "String"
+     },
+     {
+      "name": "environment",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstanceEnvironmentVariable"
+      }
+     },
+     {
+      "name": "dependencies",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstanceDependency"
+      }
+     },
+     {
+      "name": "endpoints",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstanceEndpoint"
+      }
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "ProgramInstance"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramInstanceEnvironmentVariable",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "value",
+      "type": "String"
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "ProgramInstanceEnvironmentVariable"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramInstanceDependency",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "value",
+      "type": "String"
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "ProgramInstanceDependency"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramInstanceEndpoint",
+    "fields": [
+     {
+      "name": "id",
+      "type": "String"
+     },
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "type",
+      "type": "String"
+     },
+     {
+      "name": "url",
+      "type": "String"
+     },
+     {
+      "name": "description",
+      "type": "String"
+     }
+    ],
+    "computedFields": [
+     {
+      "name": "self",
+      "type": "Ref",
+      "ofType": {
+       "type": "ProgramInstanceEndpoint"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   }
+  ]
+ },
+ "expressions": [],
+ "database": [],
+ "isDriver": false
+}
