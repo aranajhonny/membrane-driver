@@ -1,5 +1,8 @@
 const { schema, imports, dependencies, environment, expressions, endpoints } = program;
 
+environment
+  .add('TOKEN', 'The API TOKEN')
+
 schema.type('Root')
   .field('programs', 'ProgramCollection')
   .field('programInstances', 'ProgramInstance')

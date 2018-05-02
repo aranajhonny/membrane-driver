@@ -1,7 +1,12 @@
 {
  "imports": [],
  "dependencies": [],
- "environment": [],
+ "environment": [
+  {
+   "name": "TOKEN",
+   "description": "The API TOKEN"
+  }
+ ],
  "endpoints": [],
  "schema": {
   "types": [
