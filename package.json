@@ -2,12 +2,8 @@
   "name": "membrane",
   "version": "1",
   "dependencies": {
-    "apollo-cache-inmemory": "^1.1.12",
-    "apollo-client": "^2.2.8",
-    "apollo-link-http": "^1.5.4",
-    "graphql": "^0.13.2",
-    "graphql-tag": "^2.9.2",
-    "node-fetch": "^2.1.2"
+    "cross-fetch": "^2.1.1",
+    "graphql-request": "^1.5.2"
   },
   "license": "MIT"
 }

@@ -1,33 +1,32 @@
+// TODO: everything, waiting for a graphql-client library
 import { client } from './client';
+import 'cross-fetch/polyfill';
+
 const { root } = program.refs;
 
 export async function init() {
   await root.set({
     programs: {},
-    programInstances: {},
+    //programInstances: {},
   });
 }
 
 export const ProgramCollection = {
-  async one({ args }) {
-  },
+  async one({ args }) {},
   async items() {
-     const result = await client.query(gql`
+    const query = `
     query {
       allPrograms {
         id
         name
-        latestVersion { id, hash, dependencies { name description type }, environment { name description type }}
       }
     }
-  `);
-
-  console.log(result.allPrograms)
-  return result.allPrograms
+  `;
+    const result = await client.request(query);
+    console.log(result);
   },
 };
 
 export const Program = {
-  async self() {
-  },
+  async self() {},
 };
