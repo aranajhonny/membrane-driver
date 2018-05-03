@@ -16,10 +16,6 @@
      {
       "name": "programs",
       "type": "ProgramCollection"
-     },
-     {
-      "name": "programInstances",
-      "type": "ProgramInstance"
      }
     ],
     "computedFields": [],
@@ -63,10 +59,6 @@
       "type": "String"
      },
      {
-      "name": "latestVersion",
-      "type": "ProgramVersion"
-     },
-     {
       "name": "runningInstances",
       "type": "List",
       "ofType": {
@@ -81,6 +73,10 @@
       "ofType": {
        "type": "Program"
       }
+     },
+     {
+      "name": "latestVersion",
+      "type": "ProgramVersion"
      }
     ],
     "actions": [],
@@ -100,10 +96,6 @@
      {
       "name": "programId",
       "type": "String"
-     },
-     {
-      "name": "program",
-      "type": "Program"
      },
      {
       "name": "schema",
@@ -138,7 +130,12 @@
       }
      }
     ],
-    "computedFields": [],
+    "computedFields": [
+     {
+      "name": "program",
+      "type": "Program"
+     }
+    ],
     "actions": [],
     "events": []
    },
@@ -551,10 +548,6 @@
       "type": "String"
      },
      {
-      "name": "programVersion",
-      "type": "ProgramVersion"
-     },
-     {
       "name": "status",
       "type": "String"
      },
@@ -587,6 +580,10 @@
       "ofType": {
        "type": "ProgramInstance"
       }
+     },
+     {
+      "name": "programVersion",
+      "type": "ProgramVersion"
      }
     ],
     "actions": [],
