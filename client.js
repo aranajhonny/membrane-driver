@@ -21,26 +21,6 @@ export async function listPrograms() {
               }
               runningInstances {
                 id
-                alias
-                programVersion {
-                  id
-                }
-                status
-                environment {
-                  name
-                  value
-                }
-                dependencies {
-                  name
-                  value
-                }
-                endpoints {
-                  id
-                  name
-                  type
-                  url
-                  description
-                }
               }
             }
           }
@@ -86,6 +66,38 @@ export async function getProgram(id) {
   `;
   const result = await client.request(query);
   return result.program;
+}
+
+export async function getProgramInstance(id) {
+  const query = `
+          query {
+            programInstance(id: "${id}") {
+                id
+                alias
+                programVersion {
+                  id
+                }
+                status
+                environment {
+                  name
+                  value
+                }
+                dependencies {
+                  name
+                  value
+                }
+                endpoints {
+                  id
+                  name
+                  type
+                  url
+                  description
+                }
+            }
+          }
+        `;
+  const result = await client.request(query);
+  return result.programInstance;
 }
 
 export async function getProgramVersion(id) {
@@ -253,4 +265,44 @@ export async function getProgramVersion(id) {
   `;
   const result = await client.request(query);
   return result.programVersion;
+}
+
+export async function allProgramsInstances() {
+  const query = `
+          query {
+            allProgramInstances{
+                id
+                alias
+                programVersion {
+                  id
+                }
+                status
+                environment {
+                  name
+                  value
+                }
+                dependencies {
+                  name
+                  value
+                }
+                endpoints {
+                  id
+                  name
+                  type
+                  url
+                  description
+                }
+            }
+          }
+  `;
+  const result = await client.request(query);
+  return result.allProgramInstances;
+}
+export async function killProgramInstance(id) {
+  const mutation = `
+  mutation {
+    killProgramInstance(programInstanceId: "${id}")
+  }
+  `
+  return client.request(mutation)
 }

@@ -5,15 +5,29 @@ const { root } = program.refs;
 export async function init() {
   await root.set({
     programs: {},
-    //programInstances: {},
+    programInstances: {},
   });
 }
 
 export const ProgramCollection = {
-  async one({ args }) {},
+  async one({ args }) {
+    return client.getProgram(args.id);
+  },
   async items() {
     return client.listPrograms();
   },
+};
+
+export const ProgramInstanceCollection = {
+  async one({ args }) {
+    return client.getProgramInstance(args.id);
+  },
+  async items() {
+    return client.allProgramsInstances();
+  },
+  async killProgramInstance(args) {
+    return client.killProgramInstance(args.id)
+  }
 };
 
 export const Program = {
@@ -23,6 +37,14 @@ export const Program = {
 
   async latestVersion({ source }) {
     return client.getProgramVersion(source.latestVersion.id);
+  },
+  async runningInstances({ source }) {
+    const instances = await Promise.all(
+      source.runningInstances.map(inst => {
+        return client.getProgramInstance(inst.id);
+      })
+    );
+    return instances;
   },
 };
 

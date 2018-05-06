@@ -14,12 +14,53 @@
     "name": "Root",
     "fields": [
      {
+      "name": "programInstances",
+      "type": "ProgramInstanceCollection"
+     },
+     {
       "name": "programs",
       "type": "ProgramCollection"
      }
     ],
     "computedFields": [],
     "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramInstanceCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ProgramInstance",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstance"
+      }
+     }
+    ],
+    "actions": [
+     {
+      "name": "killProgramInstance",
+      "type": "Int",
+      "params": [
+       {
+        "name": "id",
+        "type": "String",
+        "description": "Program instance id"
+       }
+      ]
+     }
+    ],
     "events": []
    },
    {
@@ -57,13 +98,6 @@
      {
       "name": "name",
       "type": "String"
-     },
-     {
-      "name": "runningInstances",
-      "type": "List",
-      "ofType": {
-       "type": "ProgramInstance"
-      }
      }
     ],
     "computedFields": [
@@ -77,6 +111,13 @@
      {
       "name": "latestVersion",
       "type": "ProgramVersion"
+     },
+     {
+      "name": "runningInstances",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstance"
+      }
      }
     ],
     "actions": [],

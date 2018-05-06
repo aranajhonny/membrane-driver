@@ -4,8 +4,15 @@ environment
   .add('TOKEN', 'The API TOKEN')
 
 schema.type('Root')
+  .field('programInstances', 'ProgramInstanceCollection')
   .field('programs', 'ProgramCollection')
-  //.field('programInstances', 'ProgramInstance')
+
+schema.type('ProgramInstanceCollection')
+  .computed('one', 'ProgramInstance')
+    .param('id', 'String')
+  .computed('items', '[ProgramInstance]')
+  .action('killProgramInstance')
+    .param('id','String', 'Program instance id')
 
 schema.type('ProgramCollection')
   .computed('one', 'Program')
@@ -17,7 +24,7 @@ schema.type('Program')
   .field('id', 'String')
   .field('name', 'String')
   .computed('latestVersion', 'ProgramVersion')
-  .field('runningInstances', '[ProgramInstance]')
+  .computed('runningInstances', '[ProgramInstance]')
 
 schema.type('ProgramVersion')
   .field('id','String')
