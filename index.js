@@ -25,9 +25,9 @@ export const ProgramInstanceCollection = {
   async items() {
     return client.allProgramsInstances();
   },
-  async killProgramInstance(args) {
-    return client.killProgramInstance(args.id)
-  }
+  async killProgramInstance({ args }) {
+    return client.killProgramInstance(args.id);
+  },
 };
 
 export const Program = {
