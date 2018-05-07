@@ -56,7 +56,7 @@ export const ProgramVersion = {
 
 export const ProgramInstance = {
   self({ source }) {
-    return root.programs.one({ id: source.id });
+    return root.programInstances.one({ id: source.id });
   },
   async programVersion({ source }) {
     return client.getProgramVersion(source.programVersion.id);
