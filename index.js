@@ -72,7 +72,7 @@ export const TypeCollection = {
   },
 };
 
-export const SchemaImport = {
+export const SchemaImportCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -81,7 +81,7 @@ export const SchemaImport = {
   },
 };
 
-export const Action = {
+export const ActionCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -90,7 +90,7 @@ export const Action = {
   },
 };
 
-export const Event = {
+export const EventCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -99,7 +99,7 @@ export const Event = {
   },
 };
 
-export const Field = {
+export const FieldCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -108,7 +108,7 @@ export const Field = {
   },
 };
 
-export const ComputedField = {
+export const ComputedFieldCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -117,7 +117,7 @@ export const ComputedField = {
   },
 };
 
-export const Param = {
+export const ParamCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -126,7 +126,7 @@ export const Param = {
   },
 };
 
-export const ProgramVersionDependency = {
+export const ProgramVersionDependencyCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -135,7 +135,7 @@ export const ProgramVersionDependency = {
   },
 };
 
-export const ProgramVersionEnvironmentVariable = {
+export const ProgramVersionEnvironmentVariableCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -144,7 +144,7 @@ export const ProgramVersionEnvironmentVariable = {
   },
 };
 
-export const ProgramVersionExpression = {
+export const ProgramVersionExpressionCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
@@ -153,7 +153,7 @@ export const ProgramVersionExpression = {
   },
 };
 
-export const ProgramVersionFile = {
+export const ProgramVersionFileCollection = {
   async one({ args, source }) {
     return source.find(item => item.id === args.id);
   },
