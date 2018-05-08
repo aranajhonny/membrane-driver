@@ -16,7 +16,7 @@ schema.type('Root')
   .field('programInstances', 'ProgramInstanceCollection')
   .field('programs', 'ProgramCollection')
 
-collection('ProgramInstanceCollection')
+collection('ProgramInstance')
     .action('killProgramInstance')
      .param('id','String', 'Program instance id')
 

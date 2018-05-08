@@ -27,12 +27,12 @@
     "events": []
    },
    {
-    "name": "ProgramInstanceCollectionCollection",
+    "name": "ProgramInstanceCollection",
     "fields": [],
     "computedFields": [
      {
       "name": "one",
-      "type": "ProgramInstanceCollection",
+      "type": "ProgramInstance",
       "params": [
        {
         "name": "id",
@@ -44,7 +44,7 @@
       "name": "items",
       "type": "List",
       "ofType": {
-       "type": "ProgramInstanceCollection"
+       "type": "ProgramInstance"
       }
      }
     ],
