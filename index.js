@@ -62,3 +62,102 @@ export const ProgramInstance = {
     return client.getProgramVersion(source.programVersion.id);
   },
 };
+
+export const TypeCollection = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const SchemaImport = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const Action = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const Event = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const Field = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const ComputedField = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const Param = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const ProgramVersionDependency = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const ProgramVersionEnvironmentVariable = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const ProgramVersionExpression = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};
+
+export const ProgramVersionFile = {
+  async one({ args, source }) {
+    return source.find(item => item.id === args.id);
+  },
+  async items({ source }) {
+    return source;
+  },
+};

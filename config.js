@@ -1,5 +1,14 @@
 const { schema, imports, dependencies, environment, expressions, endpoints } = program;
 
+function collection(type) {
+  const collection = schema.type(type + 'Collection')
+    .computed('one', type)
+      .param('id', 'String')
+    .computed('items', `[${type}]`)
+
+  return collection
+}
+
 environment
   .add('TOKEN', 'The API TOKEN')
 
@@ -7,17 +16,11 @@ schema.type('Root')
   .field('programInstances', 'ProgramInstanceCollection')
   .field('programs', 'ProgramCollection')
 
-schema.type('ProgramInstanceCollection')
-  .computed('one', 'ProgramInstance')
-    .param('id', 'String')
-  .computed('items', '[ProgramInstance]')
-  .action('killProgramInstance')
-    .param('id','String', 'Program instance id')
+collection('ProgramInstanceCollection')
+    .action('killProgramInstance')
+     .param('id','String', 'Program instance id')
 
-schema.type('ProgramCollection')
-  .computed('one', 'Program')
-    .param('id', 'String')
-  .computed('items', '[Program]')
+collection('Program')
 
 schema.type('Program')
   .computed('self', 'Program*')
@@ -148,3 +151,25 @@ schema.type('ProgramInstanceEndpoint')
   .field('type','String')
   .field('url','String')
   .field('description','String')
+
+collection('Type')
+
+collection('SchemaImport')
+
+collection('Action')
+
+collection('Event')
+
+collection('Field')
+
+collection('ComputedField')
+
+collection('Param')
+
+collection('ProgramVersionDependency')
+
+collection('ProgramVersionEnvironmentVariable')
+
+collection('ProgramVersionExpression')
+
+collection('ProgramVersionFile')

@@ -27,12 +27,12 @@
     "events": []
    },
    {
-    "name": "ProgramInstanceCollection",
+    "name": "ProgramInstanceCollectionCollection",
     "fields": [],
     "computedFields": [
      {
       "name": "one",
-      "type": "ProgramInstance",
+      "type": "ProgramInstanceCollection",
       "params": [
        {
         "name": "id",
@@ -44,7 +44,7 @@
       "name": "items",
       "type": "List",
       "ofType": {
-       "type": "ProgramInstance"
+       "type": "ProgramInstanceCollection"
       }
      }
     ],
@@ -708,6 +708,281 @@
       "type": "Ref",
       "ofType": {
        "type": "ProgramInstanceEndpoint"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "TypeCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "Type",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "Type"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "SchemaImportCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "SchemaImport",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "SchemaImport"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ActionCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "Action",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "Action"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "EventCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "Event",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "Event"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "FieldCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "Field",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "Field"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ComputedFieldCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ComputedField",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ComputedField"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ParamCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "Param",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "Param"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersionDependencyCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ProgramVersionDependency",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramVersionDependency"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersionEnvironmentVariableCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ProgramVersionEnvironmentVariable",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramVersionEnvironmentVariable"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersionExpressionCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ProgramVersionExpression",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramVersionExpression"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramVersionFileCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ProgramVersionFile",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramVersionFile"
       }
      }
     ],
