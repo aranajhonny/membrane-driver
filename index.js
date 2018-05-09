@@ -25,9 +25,6 @@ export const ProgramInstanceCollection = {
   async items() {
     return client.allProgramsInstances();
   },
-  async killProgramInstance({ args }) {
-    return client.killProgramInstance(args.id);
-  },
 };
 
 export const Program = {
@@ -60,6 +57,10 @@ export const ProgramInstance = {
   },
   async programVersion({ source }) {
     return client.getProgramVersion(source.programVersion.id);
+  },
+  async killProgramInstance({ self }) {
+    const { id } = self.match(root.programInstances.one());
+    return client.killProgramInstance(id);
   },
 };
 

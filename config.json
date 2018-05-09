@@ -48,19 +48,7 @@
       }
      }
     ],
-    "actions": [
-     {
-      "name": "killProgramInstance",
-      "type": "Int",
-      "params": [
-       {
-        "name": "id",
-        "type": "String",
-        "description": "Program instance id"
-       }
-      ]
-     }
-    ],
+    "actions": [],
     "events": []
    },
    {
@@ -185,17 +173,11 @@
     "fields": [
      {
       "name": "types",
-      "type": "List",
-      "ofType": {
-       "type": "Type"
-      }
+      "type": "TypeCollection"
      },
      {
       "name": "imports",
-      "type": "List",
-      "ofType": {
-       "type": "SchemaImport"
-      }
+      "type": "SchemaImportCollection"
      }
     ],
     "computedFields": [],
@@ -215,31 +197,19 @@
      },
      {
       "name": "fields",
-      "type": "List",
-      "ofType": {
-       "type": "Field"
-      }
+      "type": "FieldCollection"
      },
      {
       "name": "computedFields",
-      "type": "List",
-      "ofType": {
-       "type": "ComputedField"
-      }
+      "type": "ComputedFieldCollection"
      },
      {
       "name": "actions",
-      "type": "List",
-      "ofType": {
-       "type": "Action"
-      }
+      "type": "ActionCollection"
      },
      {
       "name": "events",
-      "type": "List",
-      "ofType": {
-       "type": "Event"
-      }
+      "type": "EventCollection"
      }
     ],
     "computedFields": [
@@ -389,10 +359,7 @@
      },
      {
       "name": "params",
-      "type": "List",
-      "ofType": {
-       "type": "Param"
-      }
+      "type": "ParamCollection"
      },
      {
       "name": "type",
@@ -420,10 +387,7 @@
      },
      {
       "name": "params",
-      "type": "List",
-      "ofType": {
-       "type": "Param"
-      }
+      "type": "ParamCollection"
      },
      {
       "name": "type",
@@ -451,10 +415,7 @@
      },
      {
       "name": "type",
-      "type": "List",
-      "ofType": {
-       "type": "Type"
-      }
+      "type": "TypeCollection"
      }
     ],
     "computedFields": [
@@ -594,24 +555,15 @@
      },
      {
       "name": "environment",
-      "type": "List",
-      "ofType": {
-       "type": "ProgramInstanceEnvironmentVariable"
-      }
+      "type": "ProgramInstanceEnvironmentVariableCollection"
      },
      {
       "name": "dependencies",
-      "type": "List",
-      "ofType": {
-       "type": "ProgramInstanceDependency"
-      }
+      "type": "ProgramInstanceDependencyCollection"
      },
      {
       "name": "endpoints",
-      "type": "List",
-      "ofType": {
-       "type": "ProgramInstanceEndpoint"
-      }
+      "type": "ProgramInstanceEndpointCollection"
      }
     ],
     "computedFields": [
@@ -627,7 +579,12 @@
       "type": "ProgramVersion"
      }
     ],
-    "actions": [],
+    "actions": [
+     {
+      "name": "killProgramInstance",
+      "type": "Int"
+     }
+    ],
     "events": []
    },
    {
