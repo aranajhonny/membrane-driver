@@ -317,20 +317,17 @@ export async function updateProgramInstance(programInstanceId, programVersionId)
 }
 
 export async function action(ref, name, args) {
-  const mutation = `
-  mutation {
-      action(ref:, "${ref}" name:"${name}", args: "${args}")
-  }
-  `
-  return client.request(mutation)
+  const mutation = `mutation($ref: Ref, $name: String, $args: String) { action(ref:$ref, name:$name, args:$args) }`
+
+  const variables = { ref, name, args };
+
+  return client.request(mutation, variables);
 }
 
 export async function query(ref, query) {
-  const mutation = `mutation($ref: String!, $query: String!) {
-    query(ref:$ref, query:$query)
-  }`
+  const mutation = `mutation($ref: Ref, $query: String) { query(ref:$ref, query:$query) }`
 
-  const variables = { ref: ref, query: query};
+  const variables = { ref, query};
 
   const result = await client.request(mutation, variables);
 
