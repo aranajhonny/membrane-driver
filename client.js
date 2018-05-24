@@ -326,9 +326,11 @@ export async function action(ref, name, args) {
 }
 
 export async function query(ref, query) {
-  const mutation = `mutation($ref: String, $query: String) { query(ref:$ref, query:$query) }`
+  const mutation = `mutation($ref: String, $query: String) {
+    query(ref:$ref, query:$query)
+  }`
 
-  const variables = { ref, query};
+  const variables = { ref: ref, query: query};
 
   const result = await client.request(mutation, variables);
 
