@@ -67,9 +67,13 @@ export const ProgramInstance = {
   async programVersion({ source }) {
     return client.getProgramVersion(source.programVersion.id);
   },
-  async killProgramInstance({ self }) {
+  async kill({ self }) {
     const { id } = self.match(root.programInstances.one());
     return client.killProgramInstance(id);
+  },
+  async update({ self }) {
+    const { id } = self.match(root.programInstances.one());
+    return client.updateProgramInstance(id);
   },
 };
 
