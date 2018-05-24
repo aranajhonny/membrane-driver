@@ -306,3 +306,30 @@ export async function killProgramInstance(id) {
   `
   return client.request(mutation)
 }
+
+export async function updateProgramInstance(programInstanceId, programVersionId) {
+  const mutation = `
+  mutation {
+    updateProgramInstance(programVersionId: "${programInstanceId}", programVersionId: "${programVersionId}")
+  }
+  `
+  return client.request(mutation)
+}
+
+export async function action(ref, name, args) {
+  const mutation = `
+  mutation {
+      action(ref:, "${ref}" name:"${name}", args: "${args}")
+  }
+  `
+  return client.request(mutation)
+}
+
+export async function query(ref, query) {
+  const mutation = `
+  mutation {
+      query(ref: "${ref}", query: "${query}")
+  }
+  `
+  return client.request(mutation)
+}

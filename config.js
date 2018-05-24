@@ -15,6 +15,13 @@ environment
 schema.type('Root')
   .field('programInstances', 'ProgramInstanceCollection')
   .field('programs', 'ProgramCollection')
+  .action('action')
+    .param('ref', 'String')
+    .param('name', 'String')
+    .param('args', 'String')
+  .action('query')
+    .param('ref', 'String')
+    .param('query', 'String')
 
 collection('ProgramInstance')
 

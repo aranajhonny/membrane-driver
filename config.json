@@ -1,5 +1,4 @@
 {
- "imports": [],
  "dependencies": [],
  "environment": [
   {
@@ -9,6 +8,7 @@
  ],
  "endpoints": [],
  "schema": {
+  "imports": [],
   "types": [
    {
     "name": "Root",
@@ -23,7 +23,40 @@
      }
     ],
     "computedFields": [],
-    "actions": [],
+    "actions": [
+     {
+      "name": "action",
+      "type": "Int",
+      "params": [
+       {
+        "name": "ref",
+        "type": "String"
+       },
+       {
+        "name": "name",
+        "type": "String"
+       },
+       {
+        "name": "args",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "query",
+      "type": "Int",
+      "params": [
+       {
+        "name": "ref",
+        "type": "String"
+       },
+       {
+        "name": "query",
+        "type": "String"
+       }
+      ]
+     }
+    ],
     "events": []
    },
    {

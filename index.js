@@ -9,6 +9,15 @@ export async function init() {
   });
 }
 
+export const Root = {
+  async action({ args }) {
+    return client.action(args.ref, args.name, args.args);
+  },
+  async query({ args }) {
+    return client.query(args.ref, args.query);
+  },
+};
+
 export const ProgramCollection = {
   async one({ args }) {
     return client.getProgram(args.id);
