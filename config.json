@@ -598,7 +598,11 @@
     ],
     "actions": [
      {
-      "name": "killProgramInstance",
+      "name": "kill",
+      "type": "Int"
+     },
+     {
+      "name": "update",
       "type": "Int"
      }
     ],
