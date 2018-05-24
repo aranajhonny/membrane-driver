@@ -71,10 +71,6 @@ schema.type('Param')
   .field('type','String')
   .field('ofType','OfType')
 
-schema.type('Field')
-  .field('type','String')
-  .field('ofType','OfType')
-
 schema.type('OfType')
   .field('type','String')
   .field('ofType','OfType')
@@ -179,3 +175,9 @@ collection('ProgramVersionEnvironmentVariable')
 collection('ProgramVersionExpression')
 
 collection('ProgramVersionFile')
+
+collection('ProgramInstanceEnvironmentVariable')
+
+collection('ProgramInstanceDependency')
+
+collection('ProgramInstanceEndpoint')

@@ -317,22 +317,6 @@
     "events": []
    },
    {
-    "name": "Field",
-    "fields": [
-     {
-      "name": "type",
-      "type": "String"
-     },
-     {
-      "name": "ofType",
-      "type": "OfType"
-     }
-    ],
-    "computedFields": [],
-    "actions": [],
-    "events": []
-   },
-   {
     "name": "OfType",
     "fields": [
      {
@@ -973,6 +957,81 @@
       "type": "List",
       "ofType": {
        "type": "ProgramVersionFile"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramInstanceEnvironmentVariableCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ProgramInstanceEnvironmentVariable",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstanceEnvironmentVariable"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramInstanceDependencyCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ProgramInstanceDependency",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstanceDependency"
+      }
+     }
+    ],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "ProgramInstanceEndpointCollection",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "one",
+      "type": "ProgramInstanceEndpoint",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "items",
+      "type": "List",
+      "ofType": {
+       "type": "ProgramInstanceEndpoint"
       }
      }
     ],

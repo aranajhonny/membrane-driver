@@ -1,6 +1,6 @@
 const { TOKEN } = process.env;
 
-const URL = 'http://api.membrane.io/graphql';
+const URL = 'https://membrane.io/api/graphql';
 
 import { GraphQLClient } from '@membrane/graphql-request';
 
@@ -331,5 +331,6 @@ export async function query(ref, query) {
       query(ref: "${ref}", query: "${query}")
   }
   `
-  return client.request(mutation)
+  const result = await client.request(mutation)
+  return result.query
 }
